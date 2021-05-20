@@ -1,6 +1,6 @@
 import React from 'react'
 import { HeaderShowcase } from '../../components/header'
-import Products from '../../components/products'
+import Products from './Products'
 import Footer from '../../components/footer'
 
 export default function Showcase() {
