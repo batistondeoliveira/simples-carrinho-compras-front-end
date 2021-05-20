@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Header from './Header'
 
 export default function HeaderShowcase() {
@@ -24,7 +25,9 @@ export default function HeaderShowcase() {
 
                     <i class="fas fa-shopping-cart"></i>
                     
-                    <a href="#">Carrinho</a>
+                    <Link to="/checkout">
+                        Carrinho
+                    </Link>
                 </div>
             </div>
         </Header>
