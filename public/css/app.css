@@ -152,11 +152,16 @@ ul {
     text-align: center;
   }
 }
-.checkout-grid-container {
+.checkout-grid i {
+  font-size: 3rem;
+  color: #333;
+  margin-right: 1rem;
+}
+.checkout-grid-custumer, .checkout-grid-products {
   width: 70%;
 }
 @media (max-width: 425px) {
-  .checkout-grid-container {
+  .checkout-grid-custumer, .checkout-grid-products {
     width: 100%;
     text-align: center;
   }
@@ -342,6 +347,28 @@ ul {
   .checkout-grid-card .product-price {
     order: 4;
   }
+}
+
+.custumer-grid-card {
+  width: 100%;
+  padding-left: 1rem;
+  display: flex;
+  margin-top: 1.5rem;
+  height: 3.5rem;
+}
+@media (max-width: 425px) {
+  .custumer-grid-card {
+    width: 90%;
+    margin: 1.5rem 1rem 0 1rem;
+  }
+}
+.custumer-grid-card .custumer-detail-name {
+  font-weight: bold;
+}
+.custumer-grid-card .custumer-detail-timeout {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #b9babc;
 }
 
 /*# sourceMappingURL=app.css.map */
