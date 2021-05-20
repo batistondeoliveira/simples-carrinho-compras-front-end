@@ -1,0 +1,37 @@
+@use '../1-base/variables'
+@use '../1-base/base-mixins'
+
+.checkout-grid-card
+    border: 1px solid variables.$gray-text-color    
+    width: 100%
+    padding: 1rem
+    transition: .4s
+    display: flex    
+    justify-content: space-between   
+    align-items: center 
+    margin-top: 1.5rem
+    height: 6rem
+
+    @include base-mixins.mobile
+        width: 90%
+        margin: 1rem
+
+    &:hover
+        border-color: variables.$primary-color    
+    
+    img
+        width: 11%
+
+    .product-amount
+        font-size: 1.5rem
+        margin: 1.5rem
+
+    .product-name
+        text-transform: uppercase
+        font-size: 1.2rem
+        font-weight: bold
+
+    .product-price
+        color: variables.$red-color
+        font-size: 1.5rem
+        font-weight: bold

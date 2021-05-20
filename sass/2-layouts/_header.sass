@@ -1,0 +1,45 @@
+@use '../1-base/variables'
+@use '../1-base/base-mixins'
+@use 'layouts-mixins'
+
+.header
+    background-color: variables.$bg-color        
+
+    &-container                
+        @include layouts-mixins.center-content
+        padding: 1.3rem 0
+
+        @include base-mixins.mobile
+            flex-direction: column
+            align-items: center
+
+        a, span, i
+            color: #fff
+
+        #brand
+            font-weight: 900
+            font-size: 3rem
+
+        #search-form
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 45%
+
+            @include base-mixins.mobile
+                width: 100%
+                margin: 2rem 0            
+
+            #search
+                height: 40px
+                width: 60%                
+
+        .header-actions-menu
+            display: flex
+            align-items: center
+
+            .header-cart-container
+                @include layouts-mixins.header-icon
+
+                @include base-mixins.mobile
+                    margin: 1rem

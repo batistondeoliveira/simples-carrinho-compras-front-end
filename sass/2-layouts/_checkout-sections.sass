@@ -1,0 +1,19 @@
+@use '../1-base/variables'
+@use '../1-base/base-mixins'
+@use 'layouts-mixins'
+
+.checkout-grid
+    @include layouts-mixins.center-content
+    flex-direction: column
+    padding: 2rem 0    
+    align-items: center
+
+    h2
+        font-size: 2rem
+        text-transform: uppercase
+
+        @include base-mixins.mobile
+            text-align: center
+
+    &-container        
+        width: 70%

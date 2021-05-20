@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Shopping</title>
+    <!-- Open Sans -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <!-- CSS do projeto -->
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">            
+        <div class="header-container">
+            <a href="#" id="brand">
+                <img src="img/logo.png" alt="4all logo">
+            </a>
+
+            <form action="" id="search-form">
+                <select id="search" placeholder="Busque aqui">
+                    <option value="">
+                        Busque por categoria
+                    </option>
+
+                    <option value="Produto 1">
+                        Produto 1
+                    </option>
+                </select>                
+            </form>
+
+            <div class="header-actions-menu">          
+                <div class="header-cart-container">
+                    <span class="badge-shopping">
+                        0
+                    </span>
+
+                    <i class="fas fa-shopping-cart"></i>
+                    
+                    <a href="#">Carrinho</a>
+                </div>
+            </div>
+        </div>            
+    </header>  
+    
+    <!-- Products -->
+    <div class="checkout-grid">
+        <h2>Finalizar Pedido</h2>
+        <div class="checkout-grid-container">
+            <div class="checkout-grid-card">                 
+                <div class="checkout-actions">  
+                    <button class="btn">-</button>
+                    <label class="product-amount">1</label>                
+                    <button class="btn">+</button>
+                </div>
+
+                <img src="img/coca-cola.png" alt="Produto 1">  
+                
+                <p class="product-name">Nome do Produto</p>
+                <p class="product-price">R$ 124,90</p>                                    
+            </div> 
+            
+            <div class="checkout-grid-card">                 
+                <div class="checkout-actions">  
+                    <button class="btn">-</button>
+                    <label class="product-amount">1</label>                
+                    <button class="btn">+</button>
+                </div>
+
+                <img src="img/coca-cola.png" alt="Produto 2">  
+
+                <p class="product-name">Nome do Produto</p>
+                <p class="product-price">R$ 124,90</p>                                    
+            </div>
+        </div>
+    </div>  
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-top-about">
+                <h3>Sobre Mim</h3>
+                <p>Programador FullStack com 17 anos de experiência no desenvolvimento de sistemas.</p>
+                <p><i class="fas fa-phone"></i> <a href="#">(35) 99915-6267</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="#">batistondeoliveira@yahoo.com.br</a></p>
+            </div>
+            
+            <div class="footer-top-categories">
+                <h3>Categorias</h3>
+                <ul>
+                    <li>
+                        <a href="#">Bebidas</a>
+                    </li>
+                    <li>
+                        <a href="#">Doces</a>
+                    </li>
+                    <li>
+                        <a href="#">Salgados</a>
+                    </li>                    
+                </ul>
+            </div>                    
+        </div>
+        
+        <div class="footer-bottom">        
+            <p>Copyright &copy; 2021 - Eliel Batiston</p>
+        </div>
+    </footer>
+</body>
+</html>
