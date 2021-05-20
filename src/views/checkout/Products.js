@@ -5,7 +5,7 @@ export default function ProductList() {
         <div class="checkout-grid">
             <h2>Finalizar Pedido</h2>
 
-            <div class="custumer">
+            <div class="checkout-grid-custumer">
                 <div class="custumer-grid-card">
                     <i class="fas fa-shopping-bag"></i>
                     <div class="custumer-detail">  
@@ -43,10 +43,12 @@ export default function ProductList() {
                 </div>
             </div>
 
-            <div class="checkout-grid-button">
-                <button class="btn btn-checkout">
-                    Finalizar compra
-                </button>
+            <div class="checkout-grid-button">                
+                <div class="button-grid-card">
+                    <button class="btn btn-checkout">
+                        Finalizar compra
+                    </button>
+                </div>
             </div>
         </div>  
     );

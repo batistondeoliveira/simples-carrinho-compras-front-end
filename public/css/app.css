@@ -166,11 +166,6 @@ ul {
     text-align: center;
   }
 }
-.checkout-grid-button {
-  display: flex;
-  margin-top: 1rem;
-  justify-content: flex-end;
-}
 
 .footer {
   background-color: #15161D;
@@ -247,6 +242,19 @@ ul {
   background-color: #5628B1;
   color: #fff;
   border: 2px solid #5628B1;
+}
+
+.button-grid-card {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+@media (max-width: 425px) {
+  .button-grid-card {
+    width: 90%;
+    margin: 0 1rem;
+  }
 }
 
 .products-grid-card {
