@@ -20,9 +20,14 @@
         color: variables.$dark-color
         margin-right: 1rem 
 
-    &-custumer, &-products        
+    &-custumer, &-products, &-button        
         width: 70%
 
         @include base-mixins.mobile
             width: 100%
             text-align: center
+
+    &-button
+        display: flex
+        margin-top: 1rem
+        justify-content: flex-end

@@ -157,14 +157,19 @@ ul {
   color: #333;
   margin-right: 1rem;
 }
-.checkout-grid-custumer, .checkout-grid-products {
+.checkout-grid-custumer, .checkout-grid-products, .checkout-grid-button {
   width: 70%;
 }
 @media (max-width: 425px) {
-  .checkout-grid-custumer, .checkout-grid-products {
+  .checkout-grid-custumer, .checkout-grid-products, .checkout-grid-button {
     width: 100%;
     text-align: center;
   }
+}
+.checkout-grid-button {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: flex-end;
 }
 
 .footer {
