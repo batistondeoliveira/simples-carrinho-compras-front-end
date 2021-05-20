@@ -15,6 +15,8 @@
     @include base-mixins.mobile
         width: 90%
         margin: 1rem
+        flex-direction: column
+        height: auto
 
     &:hover
         border-color: variables.$primary-color    
@@ -22,16 +24,35 @@
     img
         width: 11%
 
-    .product-amount
-        font-size: 1.5rem
-        margin: 1.5rem
+        @include base-mixins.mobile            
+            order: 1 
+            width: 20%
+            margin-bottom: 1rem
+
+    .checkout-actions        
+        .product-amount
+            font-size: 1.5rem
+            margin: 1.5rem
+        
+        @include base-mixins.mobile
+            order: 3 
+            margin-bottom: 1rem
 
     .product-name
         text-transform: uppercase
         font-size: 1.2rem
         font-weight: bold
 
+        @include base-mixins.mobile
+            order: 2
+            margin-bottom: 1rem
+
     .product-price
         color: variables.$red-color
         font-size: 1.5rem
         font-weight: bold
+
+        @include base-mixins.mobile
+            order: 4    
+        
+            
