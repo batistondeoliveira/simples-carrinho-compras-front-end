@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ProductList() {
+export default function Products() {
     return (            
         <div class="checkout-grid">
             <h2>Finalizar Pedido</h2>
