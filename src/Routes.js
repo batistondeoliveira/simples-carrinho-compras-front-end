@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 const Showcase = lazy(() => import('./views/showcase'))
-const Shopping  = lazy(() => import('./views/shopping'))
+const Checkout  = lazy(() => import('./views/checkout'))
 const Notfound = lazy(() => import('./views/notfound'))
 
 const Routes = () => (
@@ -10,7 +10,7 @@ const Routes = () => (
         <Suspense fallback={<div>Progresso</div>}>
             <Switch>
                 <Route exact path="/" component={Showcase} />  
-                <Route exact path="/shopping" component={Shopping} />                              
+                <Route exact path="/checkout" component={Checkout} />                              
                 <Route path="*" component={Notfound} />                              
             </Switch>
         </Suspense>
