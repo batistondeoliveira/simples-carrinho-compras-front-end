@@ -1,6 +1,9 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
-export default function Footer() {
+export default function Footer() {    
+    const categories = useSelector(state => state.categoryReducer.categories);    
+
     return (            
         <footer class="footer">
             <div class="footer-top">
@@ -14,15 +17,11 @@ export default function Footer() {
                 <div class="footer-top-categories">
                     <h3>Categorias</h3>
                     <ul>
-                        <li>
-                            <a href="#">Bebidas</a>
-                        </li>
-                        <li>
-                            <a href="#">Doces</a>
-                        </li>
-                        <li>
-                            <a href="#">Salgados</a>
-                        </li>                    
+                        {categories.map((item, index) => (
+                            <li key={index}>
+                                <a href="#">{item.name}</a>
+                            </li>
+                        ))}                                                               
                     </ul>
                 </div>                    
             </div>
