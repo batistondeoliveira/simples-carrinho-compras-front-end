@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { indexAction } from '../../store/actions/products.actions';
+import { currency } from '../../components/currency'
 
 export default function Products() {
     const dispatch = useDispatch();
@@ -26,7 +27,7 @@ export default function Products() {
                         <img src="img/coca-cola.png" alt="Produto 1" />
                         <p class="category">Categoria</p>
                         <h3 class="product-name">{item.name}</h3>
-                        <p class="product-price">{item.price}</p> 
+                        <p class="product-price">{currency(item.price)}</p> 
                         <button class="btn">Adicionar ao Carrinho</button>
                     </div>  
                 ))}                                                                            
