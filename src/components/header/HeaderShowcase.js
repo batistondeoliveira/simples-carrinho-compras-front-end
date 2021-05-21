@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Header from './Header'
 import { indexAction } from '../../store/actions/category.actions';
 import { useDispatch, useSelector } from 'react-redux'
+import HeaderShowcasePopup from './HeaderShowcasePopup'
 
 export default function HeaderShowcase() {
     const dispatch = useDispatch();
@@ -45,6 +46,8 @@ export default function HeaderShowcase() {
                     <Link to="/checkout">
                         Carrinho
                     </Link>
+
+                    <HeaderShowcasePopup />
                 </div>
             </div>
         </Header>
