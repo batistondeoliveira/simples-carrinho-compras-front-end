@@ -33,17 +33,48 @@
             </form>
 
             <div class="header-actions-menu">          
-                <div class="header-cart-container">
-                    <span class="badge-shopping">
-                        0
-                    </span>
+                <a href="#">
+                    <div class="header-cart-container">
+                        <i class="fas fa-shopping-cart"></i>
 
-                    <i class="fas fa-shopping-cart"></i>
-                    
-                    <a href="#">Carrinho</a>
+                        <span class="badge-shopping">
+                            0
+                        </span>                        
+                        
+                        Carrinho
+                    </div>
+                </a>
+
+                <div class="shopping arrow-top-right popup">                       
+                    <!-- <span class="shopping-empty">sua cesta está vazia</span> -->
+
+                    <span class="shopping-popup-title">Minha cesta</span>
+
+                    <ul class="shopping-list">
+                        <li class="shopping-item">                            
+                            <img src="img/coca-cola.png" class="image">
+                            <span class="product-name">Produto 1 XXXX  XXXXXXXXA</span>                                
+                            <span class="product-quant">Quantidade: 1</span>
+                            <span class="product-price">R$ 1.299,00</span>
+                        </li>
+
+                        <li class="shopping-item">
+                            <img src="img/coca-cola.png" class="image">
+                            <span class="product-name">Produto 1 XXXX  XXXXXXXXA</span>                                
+                            <span class="product-quant">Quantidade: 1</span>
+                            <span class="product-price">R$ 1.299,00</span>                            
+                        </li>
+                    </ul>
+
+                    <div class="shopping-bottom">
+                        <span class="total">
+                            Total: <strong>R$ 1.299,00</strong>
+                        </span>
+                        
+                        <button class="btn">ver minha cesta</button>
+                    </div>
                 </div>
-            </div>
-        </div>            
+            </div>                                 
     </header>  
     
     <!-- Products -->
