@@ -125,7 +125,6 @@ ul {
 }
 .products-grid-container {
   display: flex;
-  justify-content: space-between;
   padding: 2rem 0;
 }
 @media (max-width: 425px) {
@@ -268,6 +267,7 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-right: 10px;
 }
 @media (max-width: 425px) {
   .products-grid-card {
@@ -479,8 +479,9 @@ ul {
 .shopping-bottom .total strong {
   color: #d10024;
 }
-.shopping-bottom button {
+.shopping-bottom .btn {
   margin-top: 1.5rem;
+  text-align: center;
 }
 
 .popup:before {
