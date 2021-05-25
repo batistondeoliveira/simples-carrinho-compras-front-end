@@ -4,20 +4,20 @@ import { useSelector } from 'react-redux'
 import { currency } from '../currency'
 
 export default function HeaderShowcasePopup() {
-    const shopping = useSelector(state => state.shoppingReducer.shopping)
+    const cart = useSelector(state => state.cartReducer.cart)
 
     return (                    
         <div class="shopping arrow-top-right popup">   
-            {shopping.uuid === undefined &&
+            {cart.uuid === undefined &&
                 <span class="shopping-empty">sua cesta está vazia</span>
             }
 
-            {shopping.uuid !== undefined &&
+            {cart.uuid !== undefined &&
                 <>                              
                     <span class="shopping-popup-title">Minha cesta</span>                    
 
                     <ul class="shopping-list">                        
-                        {shopping.items.map((item, index) => (
+                        {cart.items.map((item, index) => (
                             <li key={index} class="shopping-item">                            
                                 <img src={item.product.image} class="image" alt={item.product.name} />
                                 <span class="product-name">{item.product.name}</span>                                
@@ -29,11 +29,11 @@ export default function HeaderShowcasePopup() {
 
                     <div class="shopping-bottom">
                         <span class="total">
-                            Total: <strong>{ currency(shopping.amount) }</strong>
+                            Total: <strong>{ currency(cart.amount) }</strong>
                         </span>
                         
                         <Link class="btn" to="/checkout">
-                            ver minha cesta
+                            ver meu carrinho
                         </Link>
                     </div> 
                 </>
