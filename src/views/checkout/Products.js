@@ -4,7 +4,7 @@ import { currency } from '../components/currency';
 export default function Products(props) {
     return (                    
         <div class="checkout-grid-products">
-            {props.shopping.items.map((items, index) => (
+            {props.cart.items.map((items, index) => (
                 <div key={ index } class="checkout-grid-card">                                       
                     <div class="checkout-actions">  
                         <button class="btn">-</button>

@@ -1,6 +1,6 @@
 export const actionTypes = {
-    OPEN: 'SHOPPING_OPEN',
-    ADD_ITEM: 'SHOPPING_ADD_ITEM' 
+    OPEN: 'CART_OPEN',
+    ADD_ITEM: 'CART_ADD_ITEM' 
 }
 
 //OPEN

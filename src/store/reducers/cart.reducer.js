@@ -1,7 +1,7 @@
-import { actionTypes } from '../actions/shopping.actions'
+import { actionTypes } from '../actions/cart.actions'
 
 const initialState = {
-    shopping: {      
+    cart: {      
         uuid: undefined,
         custumer: '',
         amount: 0,
@@ -16,20 +16,20 @@ export default (state = initialState, { type, payload, custumer }) => {
 
         case actionTypes.OPEN:
             return { 
-                shopping: {
-                    ...state.shopping,
+                cart: {
+                    ...state.cart,
                     ...payload                   
                 }                    
             }
             
         case actionTypes.ADD_ITEM:
-            state.shopping.items.push(payload);
+            state.cart.items.push(payload);
 
             return {
-                shopping: {
-                    ...state.shopping,
-                    amount: state.shopping.amount + (payload.product.price * payload.quant),
-                    items: state.shopping.items
+                cart: {
+                    ...state.cart,
+                    amount: state.cart.amount + (payload.product.price * payload.quant),
+                    items: state.cart.items
                 }
             }                   
 

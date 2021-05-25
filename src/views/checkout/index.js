@@ -6,14 +6,14 @@ import Custumer from './Custumer'
 import Products from './Products'
 
 export default function Checkout() {
-    const shopping = useSelector(state => state.shoppingReducer.shopping);
+    const cart = useSelector(state => state.cartReducer.cart);
 
     return (
         <>
             <Header />   
 
             <div class="checkout-grid">
-                {shopping.uuid === undefined &&
+                {cart.uuid === undefined &&
                     <>
                         <h2>seu carrinho está vazia</h2>
 
@@ -27,13 +27,13 @@ export default function Checkout() {
                     </>
                 }
 
-                {shopping.uuid !== undefined &&
+                {cart.uuid !== undefined &&
                     <>
                         <h2>Finalizar Pedido</h2>                
 
-                        <Custumer shopping={ shopping } />
+                        <Custumer cart={ cart } />
 
-                        <Products shopping={ shopping } />
+                        <Products cart={ cart } />
 
                         <div class="checkout-grid-button">                
                             <div class="button-grid-card">

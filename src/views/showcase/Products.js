@@ -5,13 +5,13 @@ import { currency } from '../components/currency'
 import {     
     openSaleAction,
     addItemAction
-} from '../../store/actions/shopping.actions'
+} from '../../store/actions/cart.actions'
 import { uuid as uuidv4 } from 'uuidv4'
 
 export default function Products() {
     const dispatch = useDispatch();
     const products = useSelector(state => state.productsReducer.products);
-    const shopping = useSelector(state => state.shoppingReducer.shopping);
+    const cart = useSelector(state => state.cartReducer.cart);
 
     const [ isLoadMore, setLoadMore ] = React.useState(false);
     const [ query, setQuery ] = React.useState({ 
@@ -25,7 +25,7 @@ export default function Products() {
     }, []);
     
     const addItem = (product) => {        
-        if (shopping.uuid === undefined) {
+        if (cart.uuid === undefined) {
             const name = prompt('Informe o seu nome');                    
 
             dispatch(openSaleAction(uuidv4(), name));

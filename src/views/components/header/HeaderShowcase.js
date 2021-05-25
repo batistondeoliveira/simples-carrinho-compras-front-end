@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux'
 export default function HeaderShowcase() {
     const dispatch = useDispatch();
     const categories = useSelector(state => state.categoryReducer.categories);    
-    const shopping = useSelector(state => state.shoppingReducer.shopping);    
+    const cart = useSelector(state => state.cartReducer.cart);    
 
     const getProductsByCategory = (id) => {
         alert(id);
@@ -39,7 +39,7 @@ export default function HeaderShowcase() {
             <div class="header-actions-menu">          
                 <div class="header-cart-container">
                     <span class="badge-shopping">
-                        { shopping.items.length }
+                        { cart.items.length }
                     </span>
 
                     <i class="fas fa-shopping-cart"></i>
