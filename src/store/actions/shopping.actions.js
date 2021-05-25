@@ -1,17 +1,26 @@
-//import ShoppingService from '../../service/ShoppingService'
-
 export const actionTypes = {
-    INDEX: 'SHOPPING_INDEX',
-    STORE: 'SHOPPING_STORE'    
+    OPEN: 'SHOPPING_OPEN',
+    ADD_ITEM: 'SHOPPING_ADD_ITEM' 
 }
 
-//INDEX
-export const indexResponse = (payload) => ({
-    type: actionTypes.INDEX,
+//OPEN
+export const openResponse = (payload) => ({
+    type: actionTypes.OPEN,
     payload    
 })
 
-//STORE
-export const storeAction = (data) => dispatch => {
-    dispatch(indexResponse(data))
+export const openSaleAction = (uuid, custumer) => dispatch => {
+    dispatch(openResponse(
+        {"uuid": uuid, "custumer": custumer}
+    ))
+}
+
+//ITEM STORE
+export const addItemResponse = (payload) => ({
+    type: actionTypes.ADD_ITEM,
+    payload
+})
+
+export const addItemAction = (item) => dispatch => {
+    dispatch(addItemResponse(item))
 }

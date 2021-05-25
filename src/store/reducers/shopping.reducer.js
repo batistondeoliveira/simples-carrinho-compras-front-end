@@ -1,30 +1,37 @@
 import { actionTypes } from '../actions/shopping.actions'
 
 const initialState = {
-    shopping: {
+    shopping: {      
         uuid: undefined,
-        custumer: '',        
-        items: [],
-        amount: 0
-    }    
+        custumer: '',
+        amount: 0,
+        items: []           
+    }
 }
 
-export default (state = initialState, { type, payload }) => {
+export default (state = initialState, { type, payload, custumer }) => {
     switch (type) {
         case actionTypes.INDEX:
             return { ...state, ...payload }
 
-        case actionTypes.STORE:                         
-            return {
-                ...state,
+        case actionTypes.OPEN:
+            return { 
                 shopping: {
-                    ...state,
-                    items: [
-                        ...[payload],
-                        ...state.shopping.items
-                    ]
+                    ...state.shopping,
+                    ...payload                   
+                }                    
+            }
+            
+        case actionTypes.ADD_ITEM:
+            state.shopping.items.push(payload);
+
+            return {
+                shopping: {
+                    ...state.shopping,
+                    amount: state.shopping.amount + (payload.product.price * payload.quant),
+                    items: state.shopping.items
                 }
-            }           
+            }                   
 
         default:
             return state
