@@ -10,7 +10,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <!-- CSS do projeto -->
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/app.css">    
 </head>
 <body>
     <!-- Header -->
@@ -19,6 +19,8 @@
             <a href="#" id="brand">
                 <img src="img/logo.png" alt="4all logo">
             </a>
+
+            <a href="#abrirModal">Open Modal</a>            
 
             <form action="" id="search-form">
                 <select id="search" placeholder="Busque aqui">
@@ -145,5 +147,31 @@
             <p>Copyright &copy; 2021 - Eliel Batiston</p>
         </div>
     </footer>
+
+    <div id="abrirModal" class="modal">
+        <!-- conteúdo do modal aqui -->                                
+        <div>                        
+            <header>
+                <a href="#fechar" title="Fechar" class="fechar">x</a>
+
+                <h2>Janela Modal</h2>
+
+                <hr />
+            </header>
+
+            <div class="modal-body">
+                <p>Esta é uma simples janela de modal.</p>
+                <p>Você pode fazer qualquer coisa aqui, página de Login, pop-ups, ou formulários</p>
+            </div>
+
+            <footer>
+                <hr />
+
+                <div class="modal-footer">
+                    <a href="#fechar" title="Fechar" class="btn">Fechar</a>                     
+                </div>
+            </footer>
+        </div>
+    </div>
 </body>
 </html>
