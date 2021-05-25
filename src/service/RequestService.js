@@ -2,7 +2,7 @@ import axios from 'axios';
 
 class RequestService {
     static urlBase() {
-        return 'https://60a6df43b970910017eb2788.mockapi.io/api/v1/';
+        return 'https://60aaf6e466f1d000177734b2.mockapi.io/api/v1/';
     }
 
     static headers(config) {
