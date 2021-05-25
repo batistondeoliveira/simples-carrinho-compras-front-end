@@ -1,33 +1,23 @@
 import React from 'react'
+import { currency } from '../components/currency';
 
-export default function Products() {
+export default function Products(props) {
     return (                    
         <div class="checkout-grid-products">
-            <div class="checkout-grid-card">                 
-                <div class="checkout-actions">  
-                    <button class="btn">-</button>
-                    <label class="product-amount">1</label>                
-                    <button class="btn">+</button>
-                </div>
+            {props.shopping.items.map((items, index) => (
+                <div key={ index } class="checkout-grid-card">                                       
+                    <div class="checkout-actions">  
+                        <button class="btn">-</button>
+                        <label class="product-amount">1</label>                
+                        <button class="btn">+</button>
+                    </div>
 
-                <img src="img/coca-cola.png" alt="Produto 1" />  
-                
-                <p class="product-name">Nome do Produto</p>
-                <p class="product-price">R$ 124,90</p>                                    
-            </div> 
-            
-            <div class="checkout-grid-card">                 
-                <div class="checkout-actions">  
-                    <button class="btn">-</button>
-                    <label class="product-amount">1</label>                
-                    <button class="btn">+</button>
-                </div>
-
-                <img src="img/coca-cola.png" alt="Produto 2" />  
-
-                <p class="product-name">Nome do Produto</p>
-                <p class="product-price">R$ 124,90</p>                                    
-            </div>
+                    <img src={ items.product.image } alt={ items.product.name } />  
+                    
+                    <p class="product-name">{ items.product.name }</p>
+                    <p class="product-price">{ currency(items.quant * items.product.price) }</p>
+                </div>                     
+            ))}                                          
         </div>              
     );
 }
