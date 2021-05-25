@@ -1,9 +1,12 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { indexAction } from '../../store/actions/products.actions';
-import { currency } from '../../components/currency'
-import { storeAction as shoppingStoreAction } from '../../store/actions/shopping.actions'
-import { uuid } from 'uuidv4'
+import { indexAction as indexProductAction } from '../../store/actions/products.actions';
+import { currency } from '../components/currency'
+import {     
+    openSaleAction,
+    addItemAction
+} from '../../store/actions/shopping.actions'
+import { uuid as uuidv4 } from 'uuidv4'
 
 export default function Products() {
     const dispatch = useDispatch();
@@ -16,24 +19,24 @@ export default function Products() {
     }); 
 
     React.useEffect(() => {
-        dispatch(indexAction(query, isLoadMore));    
+        dispatch(indexProductAction(query, isLoadMore));        
 
         //eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-
+    
     const addItem = (product) => {        
         if (shopping.uuid === undefined) {
-            shopping.uuid = uuid(); 
-            shopping.custumer = 'Armazem do Zé';
+            const name = prompt('Informe o seu nome');                    
+
+            dispatch(openSaleAction(uuidv4(), name));
         }        
 
         let item = {};
 
         item.quant = 1;
-        item.products = product;
-        shopping.items.push(item);
-        shopping.amount += (item.quant * product);
-        dispatch(shoppingStoreAction(shopping));
+        item.product = product;                
+        
+        dispatch(addItemAction(item));
     }
 
     return (    
@@ -49,7 +52,7 @@ export default function Products() {
                         <button class="btn" onClick={() => addItem(product)}>Adicionar ao Carrinho</button>
                     </div>  
                 ))}                                                                            
-            </div>
-        </div>  
+            </div>                    
+        </div>          
     );
 }
