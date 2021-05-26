@@ -8,13 +8,13 @@ export default function HeaderShowcasePopup() {
 
     return (                    
         <div class="shopping arrow-top-right popup">   
-            {cart.uuid === undefined &&
-                <span class="shopping-empty">sua cesta está vazia</span>
+            {cart.items.length === 0 &&
+                <span class="shopping-empty">seu carrinho está vazio</span>
             }
 
-            {cart.uuid !== undefined &&
+            {cart.items.length > 0 &&
                 <>                              
-                    <span class="shopping-popup-title">Minha cesta</span>                    
+                    <span class="shopping-popup-title">Meu carrinho</span>                    
 
                     <ul class="shopping-list">                        
                         {cart.items.map((item, index) => (
