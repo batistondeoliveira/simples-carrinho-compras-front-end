@@ -4,12 +4,16 @@ import { Header } from '../components/header'
 import { Link } from 'react-router-dom'
 import Custumer from './Custumer'
 import Products from './Products'
+import CheckoutModal from './CheckoutModal'
 
 export default function Checkout() {
     const cart = useSelector(state => state.cartReducer.cart);
+    const [ checkoutModal, setCheckoutModal ] = React.useState(false);
 
     return (
         <>
+            <CheckoutModal open={checkoutModal} onClose={() => setCheckoutModal(false)} />
+
             <Header />   
 
             <div class="checkout-grid">
@@ -37,7 +41,7 @@ export default function Checkout() {
 
                         <div class="checkout-grid-button">                
                             <div class="button-grid-card">
-                                <button class="btn btn-checkout">
+                                <button class="btn btn-checkout" onClick={() => setCheckoutModal(true)}>
                                     Finalizar compra
                                 </button>
                             </div>

@@ -1,8 +1,17 @@
 export const actionTypes = {
+    INDEX: 'CART_INDEX',
     OPEN_SALE: 'CART_OPEN_SALE',
     ADD_ITEM: 'CART_ADD_ITEM',
-    UPDATE_ITEM: 'CART_UPDATE_ITEM'       
+    UPDATE_ITEM: 'CART_UPDATE_ITEM',
+    CHECKOUT: 'CART_CHECKOUT'      
 }
+
+
+//INDEX
+export const indexResponse = (payload) => ({
+    type: actionTypes.INDEX,
+    payload    
+})
 
 //OPEN
 export const openSaleResponse = (payload) => ({
@@ -34,4 +43,14 @@ export const updateItemResponse = (payload) => ({
 
 export const updateItemAction = (item) => dispatch => {
     dispatch(updateItemResponse(item))
+}
+
+//CHECKOUT
+export const checkoutAction = (cart) => dispatch => {
+    cart.uuid = undefined;
+    cart.custumer = '';
+    cart.amount = '';
+    cart.items = []; 
+
+    dispatch(indexResponse(cart));
 }
