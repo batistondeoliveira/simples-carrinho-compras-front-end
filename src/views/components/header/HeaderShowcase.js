@@ -3,16 +3,13 @@ import { Link } from 'react-router-dom'
 import Header from './Header'
 import HeaderShowcasePopup from './HeaderShowcasePopup'
 import { indexAction } from '../../../store/actions/category.actions';
+import { filterCategoryAction } from '../../../store/actions/products.actions';
 import { useDispatch, useSelector } from 'react-redux'
 
 export default function HeaderShowcase() {
     const dispatch = useDispatch();
     const categories = useSelector(state => state.categoryReducer.categories);    
-    const cart = useSelector(state => state.cartReducer.cart);    
-
-    const getProductsByCategory = (id) => {
-        alert(id);
-    }
+    const cart = useSelector(state => state.cartReducer.cart);        
 
     React.useEffect(() => {
         dispatch(indexAction());    
@@ -23,9 +20,9 @@ export default function HeaderShowcase() {
     return (
         <Header>
             <form action="" id="search-form">
-                <select id="search" placeholder="Busque aqui" onChange={(event) => getProductsByCategory(event.target.value)}>
+                <select id="search" placeholder="Busque aqui" onChange={(event) => dispatch(filterCategoryAction(event.target.value))}>
                     <option value="-1">
-                        Busque por categoria
+                        Todas as categorias
                     </option>
                     
                     {categories.map((item, index) => (
