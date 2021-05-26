@@ -1,17 +1,17 @@
 export const actionTypes = {
-    OPEN: 'CART_OPEN',
+    OPEN_SALE: 'CART_OPEN_SALE',
     ADD_ITEM: 'CART_ADD_ITEM',
     UPDATE_ITEM: 'CART_UPDATE_ITEM'       
 }
 
 //OPEN
-export const openResponse = (payload) => ({
-    type: actionTypes.OPEN,
+export const openSaleResponse = (payload) => ({
+    type: actionTypes.OPEN_SALE,
     payload    
 })
 
 export const openSaleAction = (uuid, custumer) => dispatch => {
-    dispatch(openResponse(
+    dispatch(openSaleResponse(
         {"uuid": uuid, "custumer": custumer}
     ))
 }

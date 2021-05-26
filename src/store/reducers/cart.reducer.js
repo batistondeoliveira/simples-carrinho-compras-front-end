@@ -9,12 +9,12 @@ const initialState = {
     }
 }
 
-export default (state = initialState, { type, payload, custumer }) => {
+export default (state = initialState, { type, payload }) => {
     switch (type) {
         case actionTypes.INDEX:
             return { ...state, ...payload }
 
-        case actionTypes.OPEN:
+        case actionTypes.OPEN_SALE:
             return { 
                 cart: {
                     ...state.cart,
