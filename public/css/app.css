@@ -616,4 +616,15 @@ ul {
   margin-top: 5px;
 }
 
+.modal-body .checkout {
+  text-align: center;
+}
+.modal-body .checkout i {
+  font-size: 6rem;
+}
+.modal-body .checkout p {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
 /*# sourceMappingURL=app.css.map */
