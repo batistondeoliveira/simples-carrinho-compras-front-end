@@ -9,6 +9,7 @@ export default function Products() {
     const dispatch = useDispatch();
     const products = useSelector(state => state.productsReducer.products);
     const cart = useSelector(state => state.cartReducer.cart);
+    const categories = useSelector(state => state.categoryReducer.categories);
 
     const [ custumerModal, setCustumerModal ] = React.useState(false);
     const [ productChosen, setProductChosen ] = React.useState({});
@@ -58,6 +59,12 @@ export default function Products() {
         registerItem(product)
     }
 
+    const getCategory = (idCategory) => {
+        let index = categories.findIndex(categoria => categoria.id === idCategory);
+
+        return categories[index].name;
+    }
+
     return (    
         <div class="products-grid">
             <CustumerModal 
@@ -74,7 +81,7 @@ export default function Products() {
                 {products.data.map((product, index) => (
                     <div key={index} class="products-grid-card">        
                         <img src={product.image} alt={product.name} />
-                        <p class="category">Categoria</p>
+                        <p class="category">{ getCategory(product.idCategory) }</p>
                         <h3 class="product-name">{product.name}</h3>
                         <p class="product-price">{currency(product.price)}</p> 
                         <button class="btn" onClick={() => addItem(product)}>Adicionar ao Carrinho</button>
