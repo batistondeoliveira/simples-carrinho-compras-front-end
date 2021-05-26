@@ -36,6 +36,10 @@ ul {
   list-style: none;
 }
 
+.error {
+  color: #d10024;
+}
+
 .header {
   background-color: #15161D;
 }
@@ -243,11 +247,7 @@ ul {
   -webkit-transition: opacity 400ms ease-in;
   -moz-transition: opacity 400ms ease-in;
   transition: opacity 400ms ease-in;
-  pointer-events: none;
-}
-.modal:target {
-  opacity: 1;
-  pointer-events: auto;
+  display: none;
 }
 .modal > div {
   max-width: 95vw;
@@ -276,6 +276,8 @@ ul {
   border-radius: 50%;
   font-size: 16px;
   color: #ffffff;
+  border: 0;
+  cursor: pointer;
 }
 .modal div .modal-body {
   padding: 15px 0px;
@@ -285,6 +287,17 @@ ul {
   text-align: right;
   display: flex;
   justify-content: flex-end;
+}
+.modal div footer .modal-footer button {
+  margin-right: 10px;
+}
+.modal div footer .modal-footer button:last-child {
+  margin-right: 0px;
+}
+
+.modal.open {
+  opacity: 1;
+  display: block;
 }
 
 .btn {
@@ -317,6 +330,11 @@ ul {
     width: 90%;
     margin: 0 1rem;
   }
+}
+
+.btn.btn-light {
+  background: transparent;
+  color: #333;
 }
 
 .products-grid-card {
@@ -563,6 +581,39 @@ ul {
   .popup.arrow-top-right:before {
     right: 11em;
   }
+}
+
+.input label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+.input .form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin-bottom: 5px;
+}
+.input .form-control:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.input-error {
+  color: red;
+  text-align: left;
+  font-weight: bold;
+  margin-top: 5px;
 }
 
 /*# sourceMappingURL=app.css.map */
