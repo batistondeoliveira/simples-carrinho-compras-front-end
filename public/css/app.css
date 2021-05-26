@@ -421,13 +421,13 @@ ul {
     margin-bottom: 1rem;
   }
 }
-.checkout-grid-card .product-name {
+.checkout-grid-card .product-name, .checkout-grid-card .product-amount {
   text-transform: uppercase;
   font-size: 1.2rem;
   font-weight: bold;
 }
 @media (max-width: 425px) {
-  .checkout-grid-card .product-name {
+  .checkout-grid-card .product-name, .checkout-grid-card .product-amount {
     order: 2;
     margin-bottom: 1rem;
   }
