@@ -2,10 +2,12 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { updateItemAction } from '../../store/actions/cart.actions';
 import { currency } from '../components/currency';
+import EmptyCartModal from './EmptyCartModal'
 
 export default function Products(props) {
     const dispatch = useDispatch();    
     const cart = useSelector(state => state.cartReducer.cart);        
+    const [ emptyCartModal, setEmptyCartModal ] = React.useState(false);
 
     const updateItem = (product, quant) => {
         const index = cart.items.findIndex(item => item.product.id === product.id);        
@@ -13,12 +15,23 @@ export default function Products(props) {
 
         item.quant = cart.items[index].quant + quant;         
         item.product = product
-                    
+                  
+        if (item.quant === 0 && cart.items.length === 1) {
+            setEmptyCartModal(true);
+        }
+
         dispatch(updateItemAction(item));        
     }
 
     return (                    
-        <div class="checkout-grid-products">            
+        <div class="checkout-grid-products">    
+            <EmptyCartModal 
+                open={emptyCartModal}
+
+                onSimClick={() => setEmptyCartModal(false)}
+                onClose={() => setEmptyCartModal(false)}
+            />
+
             {props.cart.items.map((item, index) => (
                 <div key={ index } class="checkout-grid-card">                                       
                     <div class="checkout-actions">  

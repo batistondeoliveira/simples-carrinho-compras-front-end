@@ -288,7 +288,7 @@ ul {
   display: flex;
   justify-content: flex-end;
 }
-.modal div footer .modal-footer button {
+.modal div footer .modal-footer button, .modal div footer .modal-footer a {
   margin-right: 10px;
 }
 .modal div footer .modal-footer button:last-child {
