@@ -1,10 +1,25 @@
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { useDispatch } from 'react-redux'
 import { Modal, Header, Body, Footer } from '../components/modal'
-import { changeCustumer } from '../../store/actions/cart.actions'
+import { uuid as uuidv4 } from 'uuidv4'
+import { openSaleAction } from '../../store/actions/cart.actions'
+import Input from '../components/input/Input'
 
 export default function CustumerModal(props) {
-    const dispatch = useDispatch()
-    const cart = useSelector(state => state.cartReducer.cart);
+    const dispatch = useDispatch()    
+    const [ msgError, setMsgError ] = React.useState('');
+    const [ custumer, setCustumer ] = React.useState('');
+
+    const addItem = () => {
+        if (!custumer) {
+            setMsgError('Informe seu nome para continuar a comprar :)')
+
+            return ;
+        }
+
+        dispatch(openSaleAction(uuidv4(), custumer)); 
+        props.onRegisterItem();                   
+    }
 
     return (
         <Modal open={ props.open }>
@@ -15,12 +30,26 @@ export default function CustumerModal(props) {
             />        
 
             <Body>
-                <label>Informe o seu nome</label>
-                <input type="text" value={cart.custumer} onChange={(input) => dispatch(changeCustumer(input.target.value))} />
+                <Input
+                    type="text"
+                    name="custumer"
+                    id="custumer"
+                    value={custumer}
+                    error={msgError}
+                    onChange={(input) => {
+                        setCustumer(input.target.value);
+
+                        if (msgError) {
+                            setMsgError('')
+                        }
+                    }}
+                >
+                    Informe o seu nome {props.open ? 'true' : 'false'}
+                </Input>                
             </Body>
 
             <Footer>
-                <button class="btn" onClick={() => props.onClick()}>Salvar</button>
+                <button class="btn" onClick={() => addItem()}>Salvar</button>
                 <button class="btn btn-light" onClick={() => props.onClose()}>Fechar</button>
             </Footer>
         </Modal>
