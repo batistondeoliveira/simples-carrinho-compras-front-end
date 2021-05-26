@@ -24,8 +24,7 @@ export default function Products() {
     }, []);
     
     const registerItem = (product) => {
-        const index = cart.items.findIndex(item => item.product.id === product.id);
-        let quant = 1;
+        const index = cart.items.findIndex(item => item.product.id === product.id);        
         let item;
 
         if (index === -1) {        
