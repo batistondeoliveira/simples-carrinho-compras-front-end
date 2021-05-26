@@ -13,7 +13,7 @@ export default function Checkout() {
             <Header />   
 
             <div class="checkout-grid">
-                {cart.uuid === undefined &&
+                {cart.items.length === 0 &&
                     <>
                         <h2>seu carrinho está vazia</h2>
 
@@ -27,7 +27,7 @@ export default function Checkout() {
                     </>
                 }
 
-                {cart.uuid !== undefined &&
+                {cart.items.length > 0 &&
                     <>
                         <h2>Finalizar Pedido</h2>                
 
