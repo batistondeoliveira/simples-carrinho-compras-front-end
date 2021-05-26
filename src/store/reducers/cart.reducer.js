@@ -33,6 +33,14 @@ export default (state = initialState, { type, payload, custumer }) => {
                 }
             }                   
 
+        case actionTypes.CHANGE_CUSTUMER:
+            return {
+                cart: {
+                    ...state.cart,
+                    custumer: payload                    
+                }
+            }
+
         default:
             return state
     }
