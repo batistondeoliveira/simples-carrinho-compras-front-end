@@ -8,7 +8,7 @@ export default function Products(props) {
                 <div key={ index } class="checkout-grid-card">                                       
                     <div class="checkout-actions">  
                         <button class="btn">-</button>
-                        <label class="product-amount">1</label>                
+                        <label class="product-amount">{items.quant}</label>                
                         <button class="btn">+</button>
                     </div>
 
