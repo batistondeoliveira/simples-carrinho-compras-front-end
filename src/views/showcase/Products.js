@@ -2,17 +2,16 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { indexAction as indexProductAction } from '../../store/actions/products.actions';
 import { currency } from '../components/currency'
-import {     
-    openSaleAction,
-    addItemAction
-} from '../../store/actions/cart.actions'
-import { uuid as uuidv4 } from 'uuidv4'
+import { addItemAction } from '../../store/actions/cart.actions'
+import CustumerModal from '../showcase/CustumerModal'
 
 export default function Products() {
     const dispatch = useDispatch();
     const products = useSelector(state => state.productsReducer.products);
     const cart = useSelector(state => state.cartReducer.cart);
 
+    const [ custumerModal, setCustumerModal ] = React.useState(false);
+    const [ productChosen, setProductChosen ] = React.useState({});
     const [ isLoadMore, setLoadMore ] = React.useState(false);
     const [ query, setQuery ] = React.useState({ 
         page: 1        
@@ -24,23 +23,40 @@ export default function Products() {
         //eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     
-    const addItem = (product) => {        
-        if (cart.uuid === undefined) {
-            const name = prompt('Informe o seu nome');                    
-
-            dispatch(openSaleAction(uuidv4(), name));
-        }        
-
+    const registerItem = (product) => {
         let item = {};
 
         item.quant = 1;
         item.product = product;                
         
-        dispatch(addItemAction(item));
+        dispatch(addItemAction(item));  
+        
+        setProductChosen({});
+        setCustumerModal(false);
+    }
+
+    const addItem = (product) => {        
+        if (cart.uuid === undefined) {            
+            setProductChosen(product);
+            setCustumerModal(true);
+            
+            return ;
+        }        
+
+        registerItem(product)
     }
 
     return (    
         <div class="products-grid">
+            <CustumerModal 
+                open={custumerModal}                 
+                onRegisterItem={() => registerItem(productChosen)}
+                onClose={() => {
+                    setCustumerModal(false);
+                    setProductChosen({});
+                }}
+            />
+        
             <h2>Produtos</h2>
             <div class="products-grid-container">
                 {products.data.map((product, index) => (
