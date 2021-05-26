@@ -31,15 +31,7 @@ export default (state = initialState, { type, payload, custumer }) => {
                     amount: state.cart.amount + (payload.product.price * payload.quant),
                     items: state.cart.items
                 }
-            }                   
-
-        case actionTypes.CHANGE_CUSTUMER:
-            return {
-                cart: {
-                    ...state.cart,
-                    custumer: payload                    
-                }
-            }
+            }                           
 
         default:
             return state
