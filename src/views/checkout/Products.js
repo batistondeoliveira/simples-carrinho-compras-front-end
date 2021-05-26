@@ -45,7 +45,15 @@ export default function Products(props) {
                     <p class="product-name">{ item.product.name }</p>
                     <p class="product-price">{ currency(item.quant * item.product.price) }</p>
                 </div>                     
-            ))}                                          
+            ))}    
+
+            {props.cart.items.length > 0 &&
+                <div class="checkout-grid-card">                                       
+                    <p class="product-amount">Total</p>                    
+                                        
+                    <p class="product-price">{ currency(cart.amount) }</p>
+                </div>             
+            }                                    
         </div>              
     );
 }
