@@ -37,7 +37,11 @@ export default (state = initialState, { type, payload, custumer }) => {
             let index = state.cart.items.findIndex(item => item.product.id === payload.product.id);
             const amount = state.cart.amount - (state.cart.items[index].product.price * state.cart.items[index].quant);
 
-            state.cart.items[index] = payload;
+            if (payload.quant > 0) {
+                state.cart.items[index] = payload;
+            } else {
+                state.cart.items.splice(index, 1);
+            }
 
             return {                
                 cart: {
