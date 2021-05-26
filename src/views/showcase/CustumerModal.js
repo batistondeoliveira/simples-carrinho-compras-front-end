@@ -44,7 +44,7 @@ export default function CustumerModal(props) {
                         }
                     }}
                 >
-                    Informe o seu nome {props.open ? 'true' : 'false'}
+                    Informe o seu nome
                 </Input>                
             </Body>
 
