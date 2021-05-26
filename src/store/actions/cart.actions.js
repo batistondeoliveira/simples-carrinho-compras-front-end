@@ -1,6 +1,7 @@
 export const actionTypes = {
     OPEN: 'CART_OPEN',
-    ADD_ITEM: 'CART_ADD_ITEM'       
+    ADD_ITEM: 'CART_ADD_ITEM',
+    UPDATE_ITEM: 'CART_UPDATE_ITEM'       
 }
 
 //OPEN
@@ -23,4 +24,14 @@ export const addItemResponse = (payload) => ({
 
 export const addItemAction = (item) => dispatch => {
     dispatch(addItemResponse(item))
+}
+
+//UPDATE ITEM
+export const updateItemResponse = (payload) => ({
+    type: actionTypes.UPDATE_ITEM,
+    payload
+})
+
+export const updateItemAction = (item) => dispatch => {
+    dispatch(updateItemResponse(item))
 }

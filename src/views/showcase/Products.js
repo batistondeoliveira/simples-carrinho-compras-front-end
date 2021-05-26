@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { indexAction as indexProductAction } from '../../store/actions/products.actions';
 import { currency } from '../components/currency'
-import { addItemAction } from '../../store/actions/cart.actions'
+import { addItemAction, updateItemAction } from '../../store/actions/cart.actions'
 import CustumerModal from '../showcase/CustumerModal'
 
 export default function Products() {
@@ -24,12 +24,25 @@ export default function Products() {
     }, []);
     
     const registerItem = (product) => {
-        let item = {};
+        const index = cart.items.findIndex(item => item.product.id === product.id);
+        let quant = 1;
+        let item;
 
-        item.quant = 1;
-        item.product = product;                
-        
-        dispatch(addItemAction(item));  
+        if (index === -1) {        
+            item = {};                        
+
+            item.quant = 1; 
+            item.product = product;                            
+
+            dispatch(addItemAction(item));  
+        } else {            
+            item = {};                        
+
+            item.quant = cart.items[index].quant + 1; 
+            item.product = product; 
+                        
+            dispatch(updateItemAction(item));  
+        }                
         
         setProductChosen({});
         setCustumerModal(false);

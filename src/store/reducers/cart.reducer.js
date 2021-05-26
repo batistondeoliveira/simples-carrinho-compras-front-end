@@ -31,7 +31,21 @@ export default (state = initialState, { type, payload, custumer }) => {
                     amount: state.cart.amount + (payload.product.price * payload.quant),
                     items: state.cart.items
                 }
-            }                           
+            }
+        
+        case actionTypes.UPDATE_ITEM: 
+            let index = state.cart.items.findIndex(item => item.product.id === payload.product.id);
+            const amount = state.cart.amount - (state.cart.items[index].product.price * state.cart.items[index].quant);
+
+            state.cart.items[index] = payload;
+
+            return {                
+                cart: {
+                    ...state.cart,
+                    amount: amount + (payload.product.price * payload.quant),
+                    items: state.cart.items
+                }
+            }
 
         default:
             return state
