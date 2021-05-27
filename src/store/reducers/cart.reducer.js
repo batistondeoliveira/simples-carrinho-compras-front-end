@@ -5,6 +5,7 @@ const initialState = {
         uuid: undefined,
         custumer: '',
         amount: 0,
+        createat: null,
         items: []           
     }
 }
@@ -49,6 +50,17 @@ export default (state = initialState, { type, payload }) => {
                     amount: amount + (payload.product.price * payload.quant),
                     items: state.cart.items
                 }
+            }
+
+        case actionTypes.TIMEOUT:
+            return { 
+                cart: {      
+                    uuid: undefined,
+                    custumer: '',
+                    amount: 0,
+                    createat: '',
+                    items: []           
+                }                   
             }
 
         default:

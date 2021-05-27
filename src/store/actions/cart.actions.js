@@ -3,9 +3,9 @@ export const actionTypes = {
     OPEN_SALE: 'CART_OPEN_SALE',
     ADD_ITEM: 'CART_ADD_ITEM',
     UPDATE_ITEM: 'CART_UPDATE_ITEM',
-    CHECKOUT: 'CART_CHECKOUT'      
+    CHECKOUT: 'CART_CHECKOUT',
+    TIMEOUT: 'CART_TIMEOUT'
 }
-
 
 //INDEX
 export const indexResponse = (payload) => ({
@@ -19,10 +19,10 @@ export const openSaleResponse = (payload) => ({
     payload    
 })
 
-export const openSaleAction = (uuid, custumer) => dispatch => {
+export const openSaleAction = (uuid, custumer) => dispatch => {    
     dispatch(openSaleResponse(
-        {"uuid": uuid, "custumer": custumer}
-    ))
+        {"uuid": uuid, "custumer": custumer, "createat": Date.parse(new Date())}
+    ));    
 }
 
 //ITEM STORE
@@ -53,4 +53,15 @@ export const checkoutAction = (cart) => dispatch => {
     cart.items = []; 
 
     dispatch(indexResponse(cart));
+    clearTimeout();
+}
+
+//TIMEOUT
+export const timeOutResponse = (payload) => ({
+    type: actionTypes.TIMEOUT,
+    payload
+})
+
+export const timeOutAction = () => dispatch => {    
+    dispatch(timeOutResponse({}));
 }
