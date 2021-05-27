@@ -1,6 +1,6 @@
 export default function Input(props) {
     return (
-        <div class="input">
+        <div className="input">
             <label style={{float: 'left'}} htmlFor={props.name}>
                 {props.children}                        
             </label>
@@ -11,12 +11,12 @@ export default function Input(props) {
                 name={props.name}                            
                 id={props.id}     
                 value={props.value || ''}                                                
-                class="form-control"
+                className="form-control"
                 onChange={input => props.onChange(input)}                
             />
 
             {props.error &&
-                <span class="input-error">
+                <span className="input-error">
                     {props.error}
                 </span>
             }

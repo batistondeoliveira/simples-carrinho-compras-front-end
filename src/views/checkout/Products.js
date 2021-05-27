@@ -24,7 +24,7 @@ export default function Products(props) {
     }
 
     return (                    
-        <div class="checkout-grid-products">    
+        <div className="checkout-grid-products">    
             <EmptyCartModal 
                 open={emptyCartModal}
 
@@ -33,25 +33,25 @@ export default function Products(props) {
             />
 
             {props.cart.items.map((item, index) => (
-                <div key={ index } class="checkout-grid-card">                                       
-                    <div class="checkout-actions">  
-                        <button class="btn" onClick={() => updateItem(item.product, -1)}>-</button>
-                        <label class="product-amount">{item.quant}</label>                
-                        <button class="btn" onClick={() => updateItem(item.product, 1)}>+</button>
+                <div key={ index } className="checkout-grid-card">                                       
+                    <div className="checkout-actions">  
+                        <button className="btn" onClick={() => updateItem(item.product, -1)}>-</button>
+                        <label className="product-amount">{item.quant}</label>                
+                        <button className="btn" onClick={() => updateItem(item.product, 1)}>+</button>
                     </div>
 
                     <img src={ item.product.image } alt={ item.product.name } />  
                     
-                    <p class="product-name">{ item.product.name }</p>
-                    <p class="product-price">{ currency(item.quant * item.product.price) }</p>
+                    <p className="product-name">{ item.product.name }</p>
+                    <p className="product-price">{ currency(item.quant * item.product.price) }</p>
                 </div>                     
             ))}    
 
             {props.cart.items.length > 0 &&
-                <div class="checkout-grid-card">                                       
-                    <p class="product-amount">Total</p>                    
+                <div className="checkout-grid-card">                                       
+                    <p className="product-amount">Total</p>                    
                                         
-                    <p class="product-price">{ currency(cart.amount) }</p>
+                    <p className="product-price">{ currency(cart.amount) }</p>
                 </div>             
             }                                    
         </div>              

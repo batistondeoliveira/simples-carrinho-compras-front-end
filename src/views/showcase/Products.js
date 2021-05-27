@@ -66,7 +66,7 @@ export default function Products() {
     }
 
     return (    
-        <div class="products-grid">
+        <div className="products-grid">
             <CustumerModal 
                 open={custumerModal}                 
                 onRegisterItem={() => registerItem(productChosen)}
@@ -77,14 +77,14 @@ export default function Products() {
             />
         
             <h2>Produtos</h2>
-            <div class="products-grid-container">
+            <div className="products-grid-container">
                 {products.data.map((product, index) => (
-                    <div key={index} class="products-grid-card">        
+                    <div key={index} className="products-grid-card">        
                         <img src={product.image} alt={product.name} />
-                        <p class="category">{ getCategory(product.idCategory) }</p>
-                        <h3 class="product-name">{product.name}</h3>
-                        <p class="product-price">{currency(product.price)}</p> 
-                        <button class="btn" onClick={() => addItem(product)}>Adicionar ao Carrinho</button>
+                        <p className="category">{ getCategory(product.idCategory) }</p>
+                        <h3 className="product-name">{product.name}</h3>
+                        <p className="product-price">{currency(product.price)}</p> 
+                        <button className="btn" onClick={() => addItem(product)}>Adicionar ao Carrinho</button>
                     </div>  
                 ))}                                                                            
             </div>                    

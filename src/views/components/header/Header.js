@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 export default function Header(props) {
     return (
-        <header class="header">            
-            <div class="header-container">
+        <header className="header">            
+            <div className="header-container">
                 <Link to="/" id="brand">
                     <img src="img/logo.png" alt="4all logo" />
                 </Link>                

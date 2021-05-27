@@ -49,8 +49,8 @@ export default function CustumerModal(props) {
             </Body>
 
             <Footer>
-                <button class="btn" onClick={() => addItem()}>Salvar</button>
-                <button class="btn btn-light" onClick={() => props.onClose()}>Fechar</button>
+                <button className="btn" onClick={() => addItem()}>Salvar</button>
+                <button className="btn btn-light" onClick={() => props.onClose()}>Fechar</button>
             </Footer>
         </Modal>
     )

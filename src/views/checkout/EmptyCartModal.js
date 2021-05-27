@@ -17,11 +17,11 @@ export default function EmptyCartModal(props) {
             </Body>
 
             <Footer>
-                <Link class="btn" onClick={() => props.onSimClick()} to="/">
+                <Link className="btn" onClick={() => props.onSimClick()} to="/">
                     Sim
                 </Link>
 
-                <button class="btn btn-light" onClick={() => props.onClose()}>Não</button>
+                <button className="btn btn-light" onClick={() => props.onClose()}>Não</button>
             </Footer>
         </Modal>
     )

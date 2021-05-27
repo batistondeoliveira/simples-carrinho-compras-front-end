@@ -11,15 +11,15 @@ export default function CheckoutModal(props) {
     return (
         <Modal open={ props.open }>            
             <Body>   
-                <div class="checkout">
-                    <i class="fas fa-check-circle"></i>
+                <div className="checkout">
+                    <i className="fas fa-check-circle"></i>
                     <p>Pedido finalizado com sucesso!</p>               
                 </div>             
             </Body>
 
             <Footer>
                 <Link 
-                    class="btn" 
+                    className="btn" 
                     onClick={() => {
                         dispatch(checkoutAction(cart));
                         props.onClose();

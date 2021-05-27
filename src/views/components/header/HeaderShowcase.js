@@ -33,13 +33,13 @@ export default function HeaderShowcase() {
                 </select>                
             </form>
 
-            <div class="header-actions-menu">          
-                <div class="header-cart-container">
-                    <span class="badge-shopping">
+            <div className="header-actions-menu">          
+                <div className="header-cart-container">
+                    <span className="badge-shopping">
                         { cart.items.length }
                     </span>
 
-                    <i class="fas fa-shopping-cart"></i>
+                    <i className="fas fa-shopping-cart"></i>
                     
                     <Link to="/checkout">
                         Carrinho

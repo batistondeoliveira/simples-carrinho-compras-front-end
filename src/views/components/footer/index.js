@@ -5,16 +5,16 @@ export default function Footer() {
     const categories = useSelector(state => state.categoryReducer.categories);    
 
     return (            
-        <footer class="footer">
-            <div class="footer-top">
-                <div class="footer-top-about">
+        <footer className="footer">
+            <div className="footer-top">
+                <div className="footer-top-about">
                 <h3>Sobre Mim</h3>
                     <p>Programador FullStack com 17 anos de experiência no desenvolvimento de sistemas.</p>
-                    <p><i class="fas fa-phone"></i> <a href="#">(35) 99915-6267</a></p>
-                    <p><i class="fas fa-envelope"></i> <a href="#">batistondeoliveira@yahoo.com.br</a></p>
+                    <p><i className="fas fa-phone"></i> <a href="#">(35) 99915-6267</a></p>
+                    <p><i className="fas fa-envelope"></i> <a href="#">batistondeoliveira@yahoo.com.br</a></p>
                 </div>
                 
-                <div class="footer-top-categories">
+                <div className="footer-top-categories">
                     <h3>Categorias</h3>
                     <ul>
                         {categories.map((item, index) => (
@@ -26,7 +26,7 @@ export default function Footer() {
                 </div>                    
             </div>
             
-            <div class="footer-bottom">        
+            <div className="footer-bottom">        
                 <p>Copyright &copy; 2021 - Eliel Batiston</p>
             </div>
         </footer>  

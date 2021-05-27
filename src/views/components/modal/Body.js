@@ -1,6 +1,6 @@
 export default function Body(props) {
     return (
-        <div class="modal-body">
+        <div className="modal-body">
             { props.children }
         </div>
     )    

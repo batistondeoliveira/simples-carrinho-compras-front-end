@@ -3,7 +3,7 @@ export default function Footer(props) {
         <footer>
             <hr />
 
-            <div class="modal-footer">
+            <div className="modal-footer">
                 { props.children }                    
             </div>
         </footer>

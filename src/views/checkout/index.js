@@ -16,14 +16,14 @@ export default function Checkout() {
 
             <Header />   
 
-            <div class="checkout-grid">
+            <div className="checkout-grid">
                 {cart.items.length === 0 &&
                     <>
                         <h2>seu carrinho está vazia</h2>
 
                         <div style={{marginTop: '1.5rem'}}>                
-                            <div class="button-grid-card">
-                                <Link class="btn btn-checkout" to="/">
+                            <div className="button-grid-card">
+                                <Link className="btn btn-checkout" to="/">
                                     Voltar
                                 </Link>                                
                             </div>
@@ -39,9 +39,9 @@ export default function Checkout() {
 
                         <Products cart={ cart } />
 
-                        <div class="checkout-grid-button">                
-                            <div class="button-grid-card">
-                                <button class="btn btn-checkout" onClick={() => setCheckoutModal(true)}>
+                        <div className="checkout-grid-button">                
+                            <div className="button-grid-card">
+                                <button className="btn btn-checkout" onClick={() => setCheckoutModal(true)}>
                                     Finalizar compra
                                 </button>
                             </div>
