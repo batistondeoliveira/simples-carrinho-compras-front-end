@@ -52,7 +52,7 @@ export default function Products() {
         if (cart.uuid === undefined) {            
             setProductChosen(product);
             setCustumerModal(true);
-            
+
             return ;
         }        
 
@@ -60,6 +60,10 @@ export default function Products() {
     }
 
     const getCategory = (idCategory) => {
+        if (categories.length === 0) {
+            return ;
+        }
+
         let index = categories.findIndex(categoria => categoria.id === idCategory);
 
         return categories[index].name;
