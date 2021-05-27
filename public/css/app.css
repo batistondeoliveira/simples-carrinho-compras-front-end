@@ -142,6 +142,8 @@ ul {
 .products-grid-container {
   display: flex;
   padding: 2rem 0;
+  flex-wrap: wrap;
+  margin-top: 1rem;
 }
 @media (max-width: 425px) {
   .products-grid-container {
@@ -347,14 +349,15 @@ ul {
 .products-grid-card {
   border: 1px solid #b9babc;
   position: relative;
-  width: 22%;
+  width: 23.8%;
   padding: 1rem;
   transition: 0.4s;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-right: 10px;
+  margin-right: 1rem;
+  margin-top: 1rem;
 }
 @media (max-width: 425px) {
   .products-grid-card {
