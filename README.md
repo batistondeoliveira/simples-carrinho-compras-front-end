@@ -2,3 +2,11 @@
 =======================
 
 Projeto de um simples carrinho de compras para o processo seletivo
+
+Tecnologias
+------------
+
+* React
+* React-redux
+* SASS
+* MockApi
