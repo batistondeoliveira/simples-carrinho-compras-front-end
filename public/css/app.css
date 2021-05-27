@@ -114,6 +114,9 @@ ul {
     margin: 1rem;
   }
 }
+.header-container .header-actions-menu .header-cart-container:hover > .shopping {
+  display: block;
+}
 
 .products-grid {
   max-width: 1170px;
@@ -468,7 +471,7 @@ ul {
 .shopping {
   position: absolute;
   background-color: #fff;
-  top: 5em;
+  top: 3.5em;
   z-index: 100;
   max-width: 24.125em;
   min-width: 24.125em;
@@ -478,6 +481,7 @@ ul {
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 9px 6px;
   text-align: left;
+  display: none;
 }
 @media (max-width: 425px) {
   .shopping {
