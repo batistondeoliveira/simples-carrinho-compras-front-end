@@ -1,0 +1,79 @@
+@use '../1-base/variables'
+
+@-webkit-keyframes glowRed 
+    from 
+        -webkit-box-shadow: rgba(255, 0, 0, 0) 0 0 0    
+    50%
+        -webkit-box-shadow: rgba(255, 0, 0, 1) 0 0 30px 5px
+    to
+        -webkit-box-shadow: rgba(255, 0, 0, 0) 0 0 0    
+
+@-moz-keyframes glowRed
+    from
+        -moz-box-shadow: rgba(255, 0, 0, 0) 0 0 0    
+    50%
+        -moz-box-shadow: rgba(255, 0, 0, 1) 0 0 30px 5px
+    to
+        -moz-box-shadow: rgba(255, 0, 0, 0) 0 0 0
+
+.offline-sistema 
+    position: fixed
+    top: 0
+    left: 0
+    height: 100vh    
+    padding: 20vh 3rem   
+    color: variables.$dark-color
+    background-color: variables.$light-color
+    text-align: center
+
+    &-message
+        h1
+            margin: 50px 0            
+            font-size: 21px
+            
+    &-offline        
+        font: 40px Arial, sans-serif
+        text-transform: uppercase
+        font-weight: bold
+        background: variables.$light-color !important
+        color: red !important
+        text-shadow: rgba(255,255,255,0.5) 0 5px 6px, rgba(255,255,255,0.4) 1px 3px 3px
+        border: 2px solid variables.$light-color
+        border-radius: 25px
+        padding: 25px
+
+        div 
+            display: inline-block
+            background-color: orange            
+            width: 40px
+            height: 40px            
+            border-radius: 50%
+            margin-left: 1rem
+            -webkit-animation-duration: 2.5s
+            -webkit-animation-iteration-count: infinite
+            -webkit-animation-timing-function: linear
+            -moz-animation-duration: 2.5s
+            -moz-animation-iteration-count: infinite
+            -moz-animation-timing-function: linear
+            -o-animation-duration: 2.5s
+            -o-animation-iteration-count: infinite
+            -o-animation-timing-function: linear
+
+        &.disconnected    
+            background-color: rgba(55, 0, 0, 1)
+            border-color: red
+            -webkit-box-shadow: 0 0 50px 0 #bbb
+            -moz-box-shadow: 0 0 50px 0 #bbb
+            -ms-box-shadow: 0 0 50px 0 #bbb
+            -o-box-shadow: 0 0 50px 0 #bbb
+            box-shadow: 0 0 50px 0 #bbb
+
+            div 
+                background-color: red
+                -webkit-box-shadow: rgba(255, 0, 0, 0.5) 0px 0px 5px
+                -moz-box-shadow: rgba(255, 0, 0, 0.5) 0px 0px 5px
+                -ms-box-shadow: rgba(255, 0, 0, 0.5) 0px 0px 5px
+                -o-box-shadow: rgba(255, 0, 0, 0.5) 0px 0px 5px
+                box-shadow: rgba(255, 0, 0, 0.5) 0px 0px 5px
+                -webkit-animation-name: glowRed
+                -moz-animation-name: glowRed    
