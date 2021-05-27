@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, Header, Body, Footer } from '../components/modal'
+import { Modal, Body, Footer } from '../components/modal'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { checkoutAction } from '../../store/actions/cart.actions'
